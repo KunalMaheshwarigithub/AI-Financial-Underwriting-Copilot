@@ -349,3 +349,12 @@ Dataset: https://www.kaggle.com/competitions/home-credit-default-risk
 **AI Financial Underwriting Copilot**
 
 A Data Science and AI portfolio project exploring machine learning, financial risk assessment, backend APIs, database engineering, and LLM-powered knowledge assistance.
+
+## 12. Additional Technical Documentation
+
+For a deeper understanding of the system, refer to the following documents:
+
+- [System Architecture](docs/architecture.md) — Component responsibilities, underwriting request flow, Copilot flow, API architecture, and database design.
+- [Model Documentation](docs/model_documentation.md) — Dataset description, feature schema, model evaluation, risk bands, missing-data limitations, and responsible-use considerations.
+
+These documents provide additional technical details beyond the project overview presented in this README.
