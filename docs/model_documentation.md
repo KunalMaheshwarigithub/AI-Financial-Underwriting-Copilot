@@ -35,7 +35,7 @@ Do not create synthetic bureau, external credit-source, or repayment values mere
 - Persisted artifacts: model, preprocessor, feature configuration, model metadata, policy configuration, and risk-band configuration.
 - Model version recorded in project context: `historical_features_v1`.
 
-The exact preprocessing parameters should be taken from the serialized artifact and training notebook rather than inferred from this summary.
+The exact preprocessing parameters should be taken from the serialized artifact and the single `AI_Financial_Project` Kaggle notebook rather than inferred from this summary.
 
 ## Recorded evaluation metrics
 
@@ -51,7 +51,7 @@ Interpretation:
 - PR-AUC summarizes precision-recall trade-offs and is useful when the positive class is uncommon.
 - Brier score measures the mean squared error of probabilistic predictions; lower is better.
 
-These values are the metrics recorded in the project's previous model evaluation. Before treating them as a reproducible benchmark, the repository should include the exact train/validation split, random seeds, preprocessing fit boundaries, metric implementation, and calibration analysis.
+These values are the metrics recorded in the project's previous model evaluation. Before treating them as a reproducible benchmark, the `AI_Financial_Project` Kaggle notebook should document the exact train/validation split, random seeds, preprocessing fit boundaries, metric implementation, and calibration analysis.
 
 ## Risk bands and project policy thresholds
 
