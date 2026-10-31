@@ -146,6 +146,13 @@ The FastAPI service currently exposes the following core workflow endpoints:
 
 Interactive API documentation is available at `/docs` when the local FastAPI service is running.
 
+
+## Documentation
+
+- [System architecture](docs/architecture.md)
+- [Model, training data, metrics, and limitations](docs/model_documentation.md)
+- [Sanitized environment-variable template](.env.example)
+
 ## Local development
 
 The project is developed locally with Python 3.12, PostgreSQL, FastAPI, and Streamlit.
@@ -159,6 +166,8 @@ The intended local startup commands, executed from the project root, are:
 # Terminal 2 — dashboard
 .\.venv\Scripts\python.exe -m streamlit run frontend/app.py
 ```
+
+Before starting, copy the sanitized template to a local `.env` file and fill in your own credentials. The populated `.env` file is excluded from Git by `.gitignore` and must never be committed.
 
 The application also requires:
 - A running PostgreSQL instance and the project database schema.
