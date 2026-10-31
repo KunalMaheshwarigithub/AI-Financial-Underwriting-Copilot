@@ -1,0 +1,67 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Secrets and environment configuration
+.env
+.env.*
+!.env.example
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
+temp/
+tmp/
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large/private applicant data and model artifacts
+models/*.joblib
+models/*.parquet
+models/*.csv
+
+# Local generated reports and outputs
+reports/generated/
+outputs/
+# Additional project data protection
+__pycache__/
+.ipynb_checkpoints/
+*.csv
+*.parquet
+*.feather
+
+# Model binaries
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.pt
+*.pth
+
+# Database exports and local backups
+*.dump
+*.backup
+*.bak
+
+# Local reports and datasets
+data/
+datasets/
+reports/generated/

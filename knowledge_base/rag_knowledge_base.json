@@ -1,0 +1,62 @@
+[
+  {
+    "doc_id":"risk_band_definition",
+    "title":"Project Risk Band Definitions",
+    "category":"Risk Scoring",
+    "content":"\nThe AI Financial Underwriting Copilot uses four project-defined\nProbability of Default risk bands:\n\nLow Risk:\nPD < 5%\n\nMedium Risk:\n5% <= PD < 10%\n\nHigh Risk:\n10% <= PD < 20%\n\nVery High Risk:\nPD >= 20%\n\nThese thresholds are project assumptions for demonstration and\ndecision-support purposes. They are not regulatory credit-risk\nstandards and should not be interpreted as universal lending\nrequirements.\n"
+  },
+  {
+    "doc_id":"decision_engine",
+    "title":"Underwriting Decision Engine",
+    "category":"Decision Engine",
+    "content":"\nThe decision engine combines the machine-learning Probability of\nDefault with deterministic policy results.\n\nProject decision rules:\n\nREJECT:\n- Any policy rule is CRITICAL, OR\n- predicted PD >= 20%\n\nREVIEW:\n- No critical rule exists, but at least one policy rule is WARNING, OR\n- predicted PD >= 10%\n\nAPPROVE:\n- No critical rule,\n- no warning rule,\n- and predicted PD < 10%.\n\nThe decision engine is deterministic. The LLM cannot change,\noverride, or replace the decision produced by this engine.\n"
+  },
+  {
+    "doc_id":"policy_status",
+    "title":"Policy Rule Status Definitions",
+    "category":"Policy Engine",
+    "content":"\nPolicy rules in the project have four possible statuses:\n\nPASSED:\nThe observed value does not cross the configured warning or\ncritical threshold.\n\nWARNING:\nThe observed value crosses the configured warning threshold but\ndoes not cross the critical threshold.\n\nCRITICAL:\nThe observed value crosses the configured critical threshold.\n\nNOT_EVALUATED:\nThe required historical information is unavailable. This status\ndoes not represent a policy violation.\n"
+  },
+  {
+    "doc_id":"bureau_debt_policy",
+    "title":"Bureau Debt to Credit Policy",
+    "category":"Policy Engine",
+    "content":"\nBUREAU_DEBT_TO_CREDIT is calculated as total historical bureau debt\ndivided by total historical bureau credit.\n\nThe current project policy configuration uses:\n\nWARNING:\nBUREAU_DEBT_TO_CREDIT >= 0.75\n\nCRITICAL:\nBUREAU_DEBT_TO_CREDIT >= 0.90\n\nThese thresholds are project-specific assumptions derived from\nexploratory population analysis. They are not regulatory standards.\n"
+  },
+  {
+    "doc_id":"installment_policy",
+    "title":"Installment Repayment Policy",
+    "category":"Policy Engine",
+    "content":"\nINSTALLMENT_LATE_RATE represents the proportion of historical\ninstallment records where payment occurred after the scheduled date.\n\nCurrent project thresholds:\n\nWARNING:\nINSTALLMENT_LATE_RATE >= 0.25\n\nCRITICAL:\nINSTALLMENT_LATE_RATE >= 0.50\n\nINSTALLMENT_UNDERPAYMENT_RATE represents the proportion of\nhistorical installment records where the paid amount was below\nthe scheduled installment amount.\n\nCurrent project thresholds:\n\nWARNING:\nINSTALLMENT_UNDERPAYMENT_RATE >= 0.25\n\nCRITICAL:\nINSTALLMENT_UNDERPAYMENT_RATE >= 0.50\n"
+  },
+  {
+    "doc_id":"shap_interpretation",
+    "title":"SHAP Explanation Guidance",
+    "category":"Explainability",
+    "content":"\nSHAP values describe how the trained model attributes a prediction\nto individual features relative to the model's baseline output.\n\nA positive SHAP value means that the feature contributed toward a\nhigher model output for that applicant.\n\nA negative SHAP value means that the feature contributed toward a\nlower model output for that applicant.\n\nSHAP values are model attributions, not causal effects.\n\nSHAP values must not be interpreted as percentage-point changes\nin Probability of Default.\n"
+  },
+  {
+    "doc_id":"missing_history",
+    "title":"Historical Data Availability",
+    "category":"Data Interpretation",
+    "content":"\nHistorical datasets such as credit-card history and bureau-balance\nhistory are not available for every applicant.\n\nWhen a historical source is unavailable, the system can mark a\npolicy rule as NOT_EVALUATED.\n\nUnavailable history must not automatically be interpreted as\nnegative credit behavior or as a policy violation.\n\nMissing historical information and observed adverse behavior are\ndifferent concepts.\n"
+  },
+  {
+    "doc_id":"model_metrics",
+    "title":"Model Evaluation Metrics",
+    "category":"Model Evaluation",
+    "content":"\nThe final historical-feature HistGradientBoosting model is evaluated\nusing ROC-AUC, PR-AUC and Brier Score.\n\nROC-AUC measures ranking ability across classification thresholds.\n\nPR-AUC is especially useful in this project because default cases\nare a minority of the population.\n\nBrier Score evaluates the quality of predicted probabilities.\n\nThe project does not use classification accuracy as the primary\nmodel-selection criterion.\n"
+  },
+  {
+    "doc_id":"llm_guardrails",
+    "title":"LLM Underwriting Guardrails",
+    "category":"Generative AI",
+    "content":"\nThe LLM is an explanation and question-answering layer.\n\nThe LLM must not:\n\n- calculate a new Probability of Default,\n- override the deterministic decision,\n- change the risk band,\n- invent applicant information,\n- treat SHAP attribution as causal,\n- use unavailable history as evidence of bad behavior.\n\nThe source of truth remains the structured ML, SHAP and policy\noutputs produced by the underwriting system.\n"
+  },
+  {
+    "doc_id":"project_architecture",
+    "title":"System Architecture",
+    "category":"Architecture",
+    "content":"\nThe AI Financial Underwriting Copilot consists of:\n\nApplicant Data\n-> Data Validation\n-> Feature Engineering\n-> ML Risk Model\n-> Probability of Default\n-> Risk Band\n-> SHAP Explainability\n-> Policy Engine\n-> Decision Engine\n-> Grounded LLM\n-> Underwriting Report \/ Natural-Language Q&A.\n\nThe LLM is downstream of the deterministic underwriting engine.\n"
+  }
+]

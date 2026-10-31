@@ -1,0 +1,38 @@
+{
+  "BUREAU_DEBT_TO_CREDIT": {
+    "warning": 0.75,
+    "critical": 0.9
+  },
+  "PREV_REFUSAL_RATE": {
+    "warning": 0.5,
+    "critical": 0.75
+  },
+  "INSTALLMENT_LATE_RATE": {
+    "warning": 0.25,
+    "critical": 0.5
+  },
+  "INSTALLMENT_UNDERPAYMENT_RATE": {
+    "warning": 0.25,
+    "critical": 0.5
+  },
+  "POS_DPD_RATE": {
+    "warning": 0.1,
+    "critical": 0.2
+  },
+  "POS_DPD_DEF_RATE": {
+    "warning": 0.1,
+    "critical": 0.2
+  },
+  "CC_MAX_UTILIZATION": {
+    "warning": 1.0,
+    "critical": 1.1
+  },
+  "BB_DPD_RATE": {
+    "warning": 0.1,
+    "critical": 0.25
+  },
+  "BB_SERIOUS_DPD_RATE": {
+    "warning": 0.05,
+    "critical": 0.1
+  }
+}

@@ -1,0 +1,25 @@
+# API
+fastapi==0.162.0
+uvicorn==0.54.0
+
+# Frontend
+streamlit==1.66.1
+
+# Data processing and machine learning
+numpy==2.0.2
+pandas==2.3.3
+scikit-learn==1.6.1
+scipy==1.16.3
+joblib==1.5.3
+shap==0.51.0
+pyarrow==26.0.0
+
+# Database
+psycopg2-binary==2.9.13
+
+# Configuration and HTTP
+python-dotenv==1.2.4
+requests==2.34.2
+
+# API validation
+pydantic==2.14.1

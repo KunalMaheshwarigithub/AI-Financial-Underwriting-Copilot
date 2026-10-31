@@ -1,0 +1,12 @@
+{
+  "model_name": "HistGradientBoostingClassifier",
+  "model_version": "historical_features_v1",
+  "roc_auc": 0.7823688562161597,
+  "pr_auc": 0.2785412256425902,
+  "brier_score": 0.06609681135640724,
+  "training_rows": 246008,
+  "validation_rows": 61503,
+  "original_feature_count": 244,
+  "processed_feature_count": 374,
+  "random_state": 42
+}
