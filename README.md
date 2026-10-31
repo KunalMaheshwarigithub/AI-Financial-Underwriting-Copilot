@@ -186,7 +186,7 @@ frontend/            Streamlit dashboard
 database/            PostgreSQL schema and database documentation
 knowledge_base/      RAG source documents
 models/              Model metadata and non-sensitive configuration
-notebooks/            Data exploration, preprocessing, training, evaluation
+notebooks/            The single end-to-end Kaggle notebook: AI_Financial_Project.ipynb
 docs/                 Architecture, methodology, and model documentation
 screenshots/          Sanitized application screenshots
 tests/                Unit and integration tests
