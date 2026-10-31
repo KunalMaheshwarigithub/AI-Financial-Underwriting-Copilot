@@ -218,3 +218,67 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# ------------------------------------------------------------
+# Project-specific local data, credentials, and generated files
+# ------------------------------------------------------------
+
+# Environment files: commit only a sanitized .env.example
+.env
+.env.*
+!.env.example
+
+# Secrets and local credentials
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+.streamlit/secrets.toml
+
+# Python environments and local IDE state
+.venv/
+venv/
+env/
+.vscode/
+.idea/
+
+# Raw/local datasets and database exports
+data/
+datasets/
+input/
+outputs/
+artifacts/
+*.csv
+*.parquet
+*.feather
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+*.backup
+*.sql.gz
+
+# Local model binaries and fitted preprocessing artifacts
+models/*.joblib
+models/*.pkl
+models/*.pickle
+models/*.onnx
+models/*.pt
+models/*.pth
+models/*.h5
+models/*.keras
+
+# Logs, temporary files, and local runtime state
+*.log
+logs/
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+
+# Keep sanitized configuration examples and source SQL schema tracked.
+!.env.example
+!database/schema.sql
